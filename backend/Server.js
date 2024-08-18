@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 
 const mongoose = require('mongoose')
-const workoutRoutes = require('./routes/products')
+const productsRoutes = require('./routes/products')
 
 //flow : server.js ->routes->controllers->models
 
@@ -39,7 +39,7 @@ app.get('/', (req,res) => {
 //app.use('/api/workouts', workoutRoutes)
 
 //connect to db
-mongoose.connect(process.env.MONG_URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => { //code runs this when we succcessfully connect db
         //listen for requests i.e listen to a certain port number
         app.listen(process.env.PORT, () => {
