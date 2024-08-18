@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const userRoutes = require('./routes/user')
 
 const mongoose = require('mongoose')
 const productRoutes = require('./routes/products')
@@ -33,7 +34,7 @@ app.get('/', (req,res) => {
 
 //routes
 app.use('/api/products', productRoutes) // Jobhi workout me created routes hai
-
+app.use('/api/user', userRoutes)
 
 //wo yaha direct use karskte
 //syntax app.use(url,function)
