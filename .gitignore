@@ -1,2 +1,4 @@
 backend/.env
 '~/
+backend/'~
+backend/node_modules/dotenv

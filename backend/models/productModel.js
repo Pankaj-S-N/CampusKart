@@ -8,7 +8,7 @@ const productSchema = new Schema({
         required: true,
         trim: true
     },
-    type: {
+    category: {
         type: String,
         required: true,
         enum: ['electronics', 'furniture', 'vehicles', 'study', 'sports','music', 'other'], // Predefined types
