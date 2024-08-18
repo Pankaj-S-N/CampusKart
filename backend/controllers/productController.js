@@ -12,7 +12,7 @@ const getProduct = async (req, res) => {
     const {id} = req.params
 
     if(!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error:'No such prpduct'})
+        return res.status(404).json({error:'No such product'})
     }
     const product = await Product.findById(id)
 
@@ -24,11 +24,13 @@ const getProduct = async (req, res) => {
 
 //create new product
 const createProduct = async (req, res) => {
-    const {title,load,reps} = req.body // depends on schema
+    const {productName, category,originalPrice,sellingPrice,isNegotiable,dateOfPurchase,isBillAvailable,inWarranty,
+        images,address,createdAt,updatedAt} = req.body
 
     //add doc to db
     try {
-        const product = await Product.create( {title,load, reps}) //Product.create() is asynchronous in nature
+        const product = await Product.create( {productName, category,originalPrice,sellingPrice,isNegotiable,dateOfPurchase,isBillAvailable,inWarranty,
+            images,address,createdAt,updatedAt}) //Product.create() is asynchronous in nature
         res.status(200).json(product)
         //await used when we use async
     } catch (error){
