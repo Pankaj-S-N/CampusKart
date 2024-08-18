@@ -12,7 +12,7 @@ const Signup = () => {
     }
 
     return (
-        <form className="signupp" onSubmit={handleSubmit}>
+        <form className="signup" onSubmit={handleSubmit}>
             <h3>Sign up</h3>
 
             <label>Email:</label>
