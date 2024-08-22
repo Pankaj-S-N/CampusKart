@@ -36,7 +36,7 @@ const createProduct = async (req, res) => {
     } catch (error){
         res.status(400).json({error: error.message}) //400 is error code here
     }
-    res.json({mssg:'POST a new product'})
+    // res.json({mssg:'POST a new product'})
 }
 
 //delete product
