@@ -7,6 +7,13 @@ const Navbar = () => {
                 <Link to="/">
                     <h1>CampusKART</h1>
                 </Link>
+                <nav>
+                    <div>
+                        <Link to= "/login">Login</Link>
+                        <Link to= "/signup">Signup</Link> 
+                        {/* added links as per the routes file */}
+                    </div>
+                </nav>
             </div>
         </header>
     )
