@@ -5,7 +5,7 @@ import {useAuthContext} from "../context/AuthContext"
 
 
 const Home = () => {
-    <title>hui</title>
+    
 }
 
 export default Home
