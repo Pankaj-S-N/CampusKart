@@ -27,10 +27,24 @@ const createProduct = async (req, res) => {
     const {productName, category,originalPrice,sellingPrice,isNegotiable,dateOfPurchase,isBillAvailable,inWarranty,
         images,address,createdAt,updatedAt} = req.body
 
+    // add user's email to the product
+     const userEmail = req.user.email
     //add doc to db
     try {
-        const product = await Product.create( {productName, category,originalPrice,sellingPrice,isNegotiable,dateOfPurchase,isBillAvailable,inWarranty,
-            images,address,createdAt,updatedAt}) //Product.create() is asynchronous in nature
+        const product = await Product.create( {
+            productName, 
+            category,
+            originalPrice,
+            sellingPrice,
+            isNegotiable,
+            dateOfPurchase,
+            isBillAvailable,
+            inWarranty,
+            images,
+            address,
+            userEmail,
+            createdAt,
+            updatedAt}) //Product.create() is asynchronous in nature
         res.status(200).json(product)
         //await used when we use async
     } catch (error){

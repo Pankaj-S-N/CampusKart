@@ -49,6 +49,11 @@ const productSchema = new Schema({
         enum: ['GH1', 'Hall1', 'Hall2', 'Hall3', 'Hall4', 'Hall5', 'Hall6', 'Hall7', 'Hall8', 'Hall9', 'Hall10', 'Hall11', 'Hall12', 'Hall13', 'Hall14'],
         trim: true
     },
+    userEmail: {
+        type: String,
+        required: true,
+        trim: true
+    },
     createdAt: {
         type: Date,
         default: Date.now
