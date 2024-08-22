@@ -6,6 +6,7 @@ const {
     deleteProduct,
     updateProduct
 } = require("../controllers/productController")
+const requireAuth = require('../middleware/authMiddleware')
 const router = express.Router()
 
 //get all workouts
@@ -14,7 +15,7 @@ router.get('/', getProducts)
 router.get('/:id', getProduct)
 
 //post a new workout
-router.post('/',createProduct)
+router.post('/', requireAuth, createProduct)
 
 //delete a  workout
 router.delete('/:id',deleteProduct)
