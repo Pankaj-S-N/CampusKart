@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 import { useAuthContext} from './useAuthContext'
 
@@ -7,7 +6,7 @@ export const useLogout = () => {
     
     const { dispatch } = useAuthContext()
     
-    const logout = async (email,password) => {
+    const logout = () => {
         //remove user from storaeg
         localStorage.removeItem('user')
 
@@ -15,5 +14,5 @@ export const useLogout = () => {
         dispatch({type: 'LOGOUT'})
     }
 
-    return logout
+    return {logout}
 }
