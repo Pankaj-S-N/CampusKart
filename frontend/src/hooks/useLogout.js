@@ -8,7 +8,7 @@ export const useLogout = () => {
     // const [isLoading, setIsLoading] = useState(null)
     const { dispatch } = useAuthContext()
     
-    const logut = async (email,password) => {
+    const logout = async (email,password) => {
         //remove user from storaeg
         localStorage.removeItem('user')
 
